@@ -7,7 +7,7 @@
       "Bash(node:*)",
       "Read(C:\\Users\\share\\.cursor/**)",
       "Bash(npx supabase:*)",
-      "Bash(set SUPABASE_ACCESS_TOKEN=sbp_9684c8b5e989bac842fe15025c56a0d8834705dc)"
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

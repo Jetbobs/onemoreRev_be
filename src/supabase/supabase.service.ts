@@ -97,4 +97,28 @@ export class SupabaseService {
       return false;
     }
   }
+
+  /**
+   * SQL 실행 (관리자 전용)
+   */
+  async executeSql(sql: string): Promise<any> {
+    try {
+      this.logger.log(`Executing SQL: ${sql.substring(0, 100)}...`);
+      
+      const { data, error } = await this.supabaseAdmin.rpc('exec', {
+        sql: sql
+      });
+
+      if (error) {
+        this.logger.error('SQL execution error:', error);
+        throw error;
+      }
+
+      this.logger.log('SQL executed successfully');
+      return data;
+    } catch (err) {
+      this.logger.error('SQL execution failed:', err.message);
+      throw err;
+    }
+  }
 }

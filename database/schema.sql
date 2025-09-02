@@ -117,6 +117,7 @@ CREATE TABLE proposals (
   description TEXT NOT NULL,
   proposed_budget INTEGER NOT NULL, -- 제안 예산
   estimated_duration INTEGER NOT NULL, -- 예상 소요 기간 (일)
+  additional_modification_fee INTEGER DEFAULT 0, -- 추가 수정 요금 (원)
   
   -- 제안서 상세
   approach TEXT, -- 접근 방법
